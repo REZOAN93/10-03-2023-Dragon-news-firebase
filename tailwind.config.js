@@ -5,6 +5,10 @@ export default {
     colors: {
       basicColor: "#D72050",
       bgAll: "var(--Dark-07, #F3F3F3)",
+      bgBtn: "58A7DE",
+    },
+    fontFamily: {
+      basicFont: ["Poppins", "sans-serif"],
     },
     extend: {},
   },

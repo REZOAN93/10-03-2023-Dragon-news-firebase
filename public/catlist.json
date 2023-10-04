@@ -1,0 +1,23 @@
+[
+    {
+      "id": "e5c4f8d2e57a1b93", 
+      "description": "Scientists Make Breakthrough in Cancer Research",
+      "image": "https://i.ibb.co/pP8WTr3/3.png",
+      "published_date": "2023-10-01",
+      "category": "Health"
+    },
+    {
+      "id": "72b1f9e6d835c0a7", 
+      "description": "Tech Giant Unveils Latest Smartphone with Advanced Features",
+      "image": "https://i.ibb.co/RDtVCLs/1.png",
+      "published_date": "2023-09-28",
+      "category": "Technology"
+    },
+    {
+      "id": "1a8e2b0f36c49d74", 
+      "description": "New Discoveries in Space Exploration",
+      "image": "https://i.ibb.co/dGFntPF/2.png",
+      "published_date": "2023-09-25",
+      "category": "Science"
+    }
+  ]

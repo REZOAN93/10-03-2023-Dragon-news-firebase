@@ -1,15 +1,13 @@
-import './App.css'
-import { Outlet } from 'react-router-dom'
-import Header from './Components/Shared/Header/Header'
+import "./App.css";
+import { Outlet } from "react-router-dom";
+
 
 function App() {
-
   return (
-    <div className='container mx-auto my-5'>
-    <Header></Header>
-    <Outlet></Outlet>
+    <div className=" max-w-7xl mx-auto my-5 font-basicFont">
+      <Outlet></Outlet>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
