@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import LeftSide from "../Shared/LeftSide/LeftSide";
 import BrekingNews from "./BrekingNews";
 import Navbar from "../Shared/Navbar/Navbar";
 import Header from "../Shared/Header/Header";
 import RightSideNav from "../Shared/RightSideNav/RightSideNav";
+import News from "./News/News";
 
 const Home = () => {
+  const data = useLoaderData();
   const [category, setCategory] = useState([]);
   const [catData, setCatData] = useState([]);
-
   useEffect(() => {
     fetch("/categories.json")
       .then((res) => res.json())
@@ -23,9 +24,9 @@ const Home = () => {
   });
   return (
     <div>
-        <Header></Header>
-        <BrekingNews></BrekingNews>
-        <Navbar></Navbar>
+      <Header></Header>
+      <BrekingNews></BrekingNews>
+      <Navbar></Navbar>
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-7  mt-5">
         <div className="px-4 ">
           <h1 className="text-xl mb-3 font-semibold">All Category</h1>
@@ -53,8 +54,12 @@ const Home = () => {
           </div>
         </div>
         <div className="  col-span-2">
-          <h1>This is me</h1>
-          <h1>Dragon News Home</h1>
+          <h1 className="text-xl mb-3 font-semibold">Dragon News Home</h1>
+          <div className="flex flex-col gap-6">
+            {data.map((na) => (
+              <News key={na._id} newsDetails={na}></News>
+            ))}
+          </div>
         </div>
         <div className="">
           <RightSideNav></RightSideNav>

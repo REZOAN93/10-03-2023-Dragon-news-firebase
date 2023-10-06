@@ -5,8 +5,11 @@ import qimg1 from "../../../assets/qZone1.png";
 import qimg2 from "../../../assets/qZone2.png";
 import qimg3 from "../../../assets/qZone3.png";
 import AmazingNews from "./AmazingNews";
+import { useLocation } from "react-router-dom";
 
 const RightSideNav = () => {
+  const location = useLocation();
+
   return (
     <div className=" space-y-6">
       <div className="space-y-2 my-2">
@@ -49,7 +52,13 @@ const RightSideNav = () => {
           <img src={qimg3} alt="" />
         </div>
       </div>
-      <AmazingNews></AmazingNews>
+      {location.pathname == "/" ? (
+        <>
+          <AmazingNews></AmazingNews>
+        </>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

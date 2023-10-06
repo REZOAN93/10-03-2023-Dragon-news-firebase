@@ -1,7 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import profile from "../../../assets/profile.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { users, signOutUser } = useContext(AuthContext);
+  const handleSignOut = () => {
+    signOutUser()
+  };
   const navData = (
     <>
       <div className="flex gap-5 hover:bg-none">
@@ -52,8 +58,21 @@ const Navbar = () => {
         <div className="w-10 rounded-full">
           <img src={profile} />
         </div>
-        <Link to={'/login'}>
-          <button className="px-7 py-2 bg-neutral-700 text-bgAll">Login</button>
+        <Link to={"/login"}>
+          {users ? (
+            <>
+              <button
+                onClick={handleSignOut}
+                className="px-7 py-2 bg-neutral-700 text-bgAll"
+              >
+                Sign Out
+              </button>
+            </>
+          ) : (
+            <button className="px-7 py-2 bg-neutral-700 text-bgAll">
+              Log In
+            </button>
+          )}
         </Link>
       </div>
     </div>
